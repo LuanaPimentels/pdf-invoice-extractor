@@ -40,10 +40,10 @@ def main():
     ws['C1'] = 'File Name'
     ws['D1'] = 'Status'
 
-    # define que os dados começarão na linha 2 (linha 1 é o cabeçalho)
+    # define que os dados começarão na linha 2 
     last_empty_line = 2
 
-    # percorre todos os arquivos da pasta
+    # percorre por todos os arquivos da pasta
     for file in files:
 
         # abre o PDF
@@ -60,14 +60,10 @@ def main():
 
         # mostra o texto extraído do PDF
         print(pdf_text)
-
-        # imprime linha separadora para organização
         print("-" * 50)
 
-        # padrão regex para encontrar o número da invoice
         inv_number_re_pattern = r'INVOICE #(\d+)'
 
-        # padrão regex para encontrar a data da invoice
         inv_date_re_pattern = r'DATE:\s*(\d{2}/\d{2}/\d{4})'
 
         # procura o número da invoice dentro do texto
@@ -117,11 +113,11 @@ def main():
     # encontra o ponto antes dos milissegundos
     dot_index = full_now.index(".")
 
-    # corta os milissegundos da data
+    # corta os segundos da data
     now = full_now[:dot_index]
 
     # salva o arquivo Excel com data no nome
-    wb.save(f"leitorPdf - {now}.xlsx")
+    wb.save("invoice_report.xlsx")
 
 
 if __name__ == "__main__":
