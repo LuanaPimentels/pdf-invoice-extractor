@@ -1,18 +1,30 @@
 # PDF Invoice Extractor
 
-Python project that reads invoice PDF files, extracts the invoice number and date, and automatically generates an Excel spreadsheet with the data.
+Python script that reads invoice PDF files, extracts the invoice number and date using regular expressions, and automatically generates an Excel report.
 
 ## Technologies
 - Python
 - pdfplumber
 - openpyxl
-- regex
+- regex (re)
 
-## How to Use
+## How to Run
 
-1. Place the PDF files inside the `pdf_invoice` folder.
+1. Install dependencies:
 
-2. Install the required libraries:
-
-```bash
 pip install -r requirements.txt
+
+2. Place the invoice PDFs inside the `pdf_invoice` folder.
+
+3. Run the script:
+
+python leitorPdf.py
+
+## Output
+
+The script generates an Excel file with:
+
+- Invoice number  
+- Invoice date  
+- File name  
+- Status
